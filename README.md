@@ -42,5 +42,26 @@ Welcome to Node and Docker
 ```
 
 
+## Using Dockerfile
 
+```
+ docker build -t ajeetraina/nodejs-simple
+ docker run -d -p 8000:8000 -v /Users/ajeetraina/Public:/public ajeetraina/nodejs-simple
+```
 
+```
+ docker ps
+CONTAINER ID   IMAGE                      COMMAND                  CREATED         STATUS         PORTS                    NAMES
+b5cbbe97de9b   ajeetraina/nodejs-simple   "docker-entrypoint.s…"   3 seconds ago   Up 2 seconds   0.0.0.0:8000->8000/tcp   elegant_keldysh
+```
+
+```
+curl localhost:8000
+<html>
+<title> Testing NodeJS
+</title>
+<body>
+Welcome to Node and Docker
+</body>
+</html>
+```
