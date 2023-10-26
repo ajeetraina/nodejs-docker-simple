@@ -30,6 +30,17 @@ The server.js script provided is a simple Node.js server that can be used to ser
  node server.js
 ```
 
+```
+curl localhost:8000
+<html>
+<title> Testing NodeJS
+</title>
+<body>
+Welcome to Node and Docker
+</body>
+</html>
+```
+
 
 
 
