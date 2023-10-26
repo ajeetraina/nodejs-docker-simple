@@ -1,0 +1,25 @@
+# Stage 1: Build the Node.js application
+
+FROM node:slim AS builder
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+# Stage 2: Create the production image
+
+FROM node:slim
+
+WORKDIR /usr/src/app
+
+COPY --from=builder /usr/src/app/node_modules ./node_modules
+
+COPY --from=builder /usr/src/app/public ./public
+
+EXPOSE 8000
+
+CMD [ "node", "server.js" ]
