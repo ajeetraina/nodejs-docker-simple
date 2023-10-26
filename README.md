@@ -65,3 +65,28 @@ Welcome to Node and Docker
 </body>
 </html>
 ```
+
+
+## Best Practices
+
+
+```
+docker images
+REPOSITORY                 TAG         IMAGE ID       CREATED          SIZE
+ajeetraina/nodejs-simple   latest      61f1d11a84e2   6 minutes ago    1.11GB
+```
+
+
+## Using Multi-Stage Build
+
+
+```
+docker build -t ajeetraina/nodejs-simple-multi . -f Dockerfile.multistage
+```
+
+```
+docker images
+REPOSITORY                       TAG         IMAGE ID       CREATED          SIZE
+ajeetraina/nodejs-simple-multi   latest      83fa50e77fce   6 seconds ago    277MB
+ajeetraina/nodejs-simple         latest      61f1d11a84e2   8 minutes ago    1.11GB
+```
